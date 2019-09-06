@@ -25,8 +25,12 @@ axios
       const object = response.data;
 
       Object.entries(object.articles).forEach(([key, val]) => {
-          console.log(key, val)
-          val.forEach(article => document.querySelector('.cards-container').appendChild(cardComponent(article)))
+          // console.log(key, val)
+          val.forEach(article => {
+            const aSingleCard = cardComponent(article);
+            aSingleCard.dataset.topic = key;
+            document.querySelector('.cards-container').appendChild(aSingleCard)
+          })
         });
   })
   .catch(error => {

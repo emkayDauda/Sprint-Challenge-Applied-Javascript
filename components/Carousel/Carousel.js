@@ -61,21 +61,40 @@ function createCarousel(){
 
 document.querySelector('.carousel-container').appendChild(createCarousel());
 
+const criminalImages =  document.querySelectorAll(`.carousel-container img`)
+criminalImages.forEach(image => {
+  image.style.display = 'block';
+  image.style.borderRadius = '1.5rem';
+})
 function switchImage(button){
 
-  const criminalImages =  document.querySelectorAll(`.carousel-container img`)
   if (button === 'left'){
     if (counter > 0){
       counter--;
       console.log(`(${counter})`)
       criminalImages[counter].style.display = 'block'
     }
+    else {
+      counter = 3;
+      criminalImages.forEach((image, index) => {
+        if (index !== 3){
+          image.style.display = 'none'
+        }
+      })
+    }
   }
       else {
-        if (counter < 3) {
+        if (counter <= 2) {
           console.log(`(${counter})`)
           criminalImages[counter].style.display = 'none'
           counter++;
+        }
+        else {
+          counter = 0;
+          criminalImages.forEach(image => {
+          image.style.display = 'block'
+      })
+
         }
       }
 }
