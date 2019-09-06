@@ -30,7 +30,7 @@ axios
       console.log(error);
   });
 
-function cardComponent(){
+function cardComponent(article){
     const [card, headline, authorContainer, imgContainer, image, authorName] = [
       "div",
       "div",
@@ -52,6 +52,10 @@ function cardComponent(){
     imgContainer.appendChild(image);
 
     card.appendChild(authorName);
+
+    headline.textContent = article.headline;
+    image.setAttribute('src', article.authorPhoto);
+    authorName.textContent = `By ${article.authorName}`
 
     return card;
 }
