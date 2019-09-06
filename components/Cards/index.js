@@ -29,6 +29,18 @@ axios
           val.forEach(article => {
             const aSingleCard = cardComponent(article);
             aSingleCard.dataset.topic = key;
+
+            aSingleCard.addEventListener('dblclick', e => {
+              // console.log(aTab.textContent)
+              const cardArray = document.querySelectorAll('.card');
+              cardArray.forEach(card => {
+                card.style.display = 'block';
+                if (card.dataset.topic !== aSingleCard.dataset.topic) {
+                  card.style.display = 'none';
+                }
+              })
+            })
+
             document.querySelector('.cards-container').appendChild(aSingleCard)
           })
         });
