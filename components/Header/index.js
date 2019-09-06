@@ -18,4 +18,10 @@ function Header() {
   date.classList.add('date');
   temp.classList.add('temp')
 
+  header.appendChild(date);
+  header.appendChild(heading);
+  header.appendChild(temp);
+
+  return header;
 }
+console.log(Header())
