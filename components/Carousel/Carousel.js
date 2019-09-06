@@ -17,6 +17,7 @@
     <div class="right-button"> > </div>
   </div>
 */
+let counter = 0;
 
 
 function createCarousel(){
@@ -32,6 +33,7 @@ function createCarousel(){
 
     const x = document.createElement(Element);
     x.style.display = 'block';
+    x.style.transition = '.5s'
     return x
   });
 
@@ -51,8 +53,29 @@ function createCarousel(){
   img3.setAttribute('src', './assets/carousel/trees.jpeg');
   img4.setAttribute('src', './assets/carousel/turntable.jpeg');
 
+  leftButton.addEventListener('click', e => switchImage('left'))
+  rightButton.addEventListener('click', e =>  switchImage('right'))
   // carousel.style.display = 'flex';
   return carousel;
 }
 
 document.querySelector('.carousel-container').appendChild(createCarousel());
+
+function switchImage(button){
+
+  const criminalImages =  document.querySelectorAll(`.carousel-container img`)
+  if (button === 'left'){
+    if (counter > 0){
+      counter--;
+      console.log(`(${counter})`)
+      criminalImages[counter].style.display = 'block'
+    }
+  }
+      else {
+        if (counter < 3) {
+          console.log(`(${counter})`)
+          criminalImages[counter].style.display = 'none'
+          counter++;
+        }
+      }
+}
