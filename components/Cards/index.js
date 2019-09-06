@@ -18,6 +18,17 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+      console.log(response.data);
+      const object = response.data;
+
+      Object.entries(object.articles).forEach(([key, val]) => console.log(key, val));
+  })
+  .catch(error => {
+      console.log(error);
+  });
 
 function cardComponent(){
     const [card, headline, authorContainer, imgContainer, image, authorName] = [
