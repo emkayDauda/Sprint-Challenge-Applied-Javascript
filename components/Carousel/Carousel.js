@@ -19,12 +19,14 @@
 */
 
 
-const [carousel, leftButton, img1, img2, img3, img4, rightButton] = [
-  "div",
-  "div",
-  "img",
-  "img",
-  "img",
-  "img",
-  "div"
-].map(Element => document.createElement(Element));
+function createCarousel(){
+  const [carousel, leftButton, img1, img2, img3, img4, rightButton] = [
+    "div",
+    "div",
+    "img",
+    "img",
+    "img",
+    "img",
+    "div"
+  ].map(Element => document.createElement(Element));
+}
