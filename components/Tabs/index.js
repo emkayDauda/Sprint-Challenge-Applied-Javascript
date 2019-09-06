@@ -13,6 +13,11 @@ axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
   .then(response => {
     console.log(response.data);
+    const topics = response.data.topics;
+    const topicsComponents = topics.map(tabComponent)
+    topicsComponents.forEach(topicComponent => {
+        document.querySelector('.topics').appendChild(topicComponent);
+    });
   })
   .catch(error => {
     console.log(error);
