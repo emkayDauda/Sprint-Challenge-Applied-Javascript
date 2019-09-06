@@ -9,4 +9,9 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-function Header() {}
+function Header() {
+  const [header, date, heading, temp] = ["div", "span", "h1", "span"].map(
+    element => document.createElement(element)
+  );
+
+}
