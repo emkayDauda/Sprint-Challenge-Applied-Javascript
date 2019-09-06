@@ -17,3 +17,23 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+
+function cardComponent(){
+    const [card, headline, authorContainer, imgContainer, image, authorName] = [
+      "div",
+      "div",
+      "div",
+      "div",
+      "img",
+      "span"
+    ].map(element => document.createElement(element));
+
+    card.classList.add('card');
+    headline.classList.add('headline');
+    authorContainer.classList.add('author');
+    imgContainer.classList.add('img-container');
+
+
+    return card;
+}
