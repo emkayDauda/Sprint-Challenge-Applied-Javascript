@@ -29,4 +29,17 @@ function createCarousel(){
     "img",
     "div"
   ].map(Element => document.createElement(Element));
+
+  carousel.classList.add('carousel');
+  leftButton.classList.add('left-button');
+  rightButton.classList.add('right-button');
+
+  carousel.appendChild(leftButton);
+  carousel.appendChild(img1);
+  carousel.appendChild(img2);
+  carousel.appendChild(img3);
+  carousel.appendChild(img4);
+  carousel.appendChild(rightButton);
+
+  return carousel;
 }
