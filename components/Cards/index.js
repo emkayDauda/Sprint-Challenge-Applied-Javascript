@@ -34,6 +34,13 @@ function cardComponent(){
     authorContainer.classList.add('author');
     imgContainer.classList.add('img-container');
 
+    card.appendChild(headline);
+    card.appendChild(authorContainer);
+
+    authorContainer.appendChild(imgContainer);
+    imgContainer.appendChild(image);
+
+    card.appendChild(authorName);
 
     return card;
 }
