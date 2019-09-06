@@ -14,4 +14,8 @@ function Header() {
     element => document.createElement(element)
   );
 
+  header.classList.add('header');
+  date.classList.add('date');
+  temp.classList.add('temp')
+
 }
