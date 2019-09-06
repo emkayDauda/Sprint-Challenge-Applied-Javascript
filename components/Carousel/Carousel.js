@@ -28,7 +28,12 @@ function createCarousel(){
     "img",
     "img",
     "div"
-  ].map(Element => document.createElement(Element));
+  ].map(Element => {
+
+    const x = document.createElement(Element);
+    x.style.display = 'block';
+    return x
+  });
 
   carousel.classList.add('carousel');
   leftButton.classList.add('left-button');
@@ -41,5 +46,13 @@ function createCarousel(){
   carousel.appendChild(img4);
   carousel.appendChild(rightButton);
 
+  img1.setAttribute('src', './assets/carousel/mountains.jpeg');
+  img2.setAttribute('src', './assets/carousel/computer.jpeg');
+  img3.setAttribute('src', './assets/carousel/trees.jpeg');
+  img4.setAttribute('src', './assets/carousel/turntable.jpeg');
+
+  // carousel.style.display = 'flex';
   return carousel;
 }
+
+document.querySelector('.carousel-container').appendChild(createCarousel());
